@@ -23,7 +23,8 @@ class _SignupScreenState extends State<SignupScreen> {
         const SnackBar(content: Text("Account created! Please log in.")),
       );
 
-      Navigator.pop(context); // go back to login screen
+      // Navigate back to the Login screen
+      Navigator.pop(context);
     }
   }
 
@@ -57,6 +58,14 @@ class _SignupScreenState extends State<SignupScreen> {
               ElevatedButton(
                 onPressed: _signup,
                 child: const Text('Create Account'),
+              ),
+              const SizedBox(height: 20),
+              // Button to go back to Login screen
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context); // Go back to the Login screen
+                },
+                child: const Text('Already have an account? Log In'),
               ),
             ],
           ),
